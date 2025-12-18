@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正在跳转...</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        p { margin-top: 10px; }
+        a {
+            color: #007AFF;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            // 1. 获取 URL 中的查询参数
+            const params = new URLSearchParams(window.location.search);
+          
+            // 2. 获取 'uri' 参数的值 (例如: omnifocus%3A%2F%2F...)
+            const targetUri = params.get('uri');
+            const appName = params.get('app');
+
+            // 更新页面显示的文字
+            const statusText = document.getElementById('status');
+          
+            if (targetUri) {
+                // 3. 解码 URI (将 %3A 变回 : )
+                // 你的示例链接里 uri 是经过 encodeURIComponent 处理的
+                const decodedUri = decodeURIComponent(targetUri);
+              
+                statusText.innerText = (appName ? "正在打开 " + appName : "正在跳转") + "...";
+              
+                // 4. 执行跳转
+                // 设置一个微小的延时，让用户能看到页面（可选，也可直接跳转）
+                setTimeout(() => {
+                    window.location.href = decodedUri;
+                }, 100);
+              
+                //以此作为后备，如果自动跳转失败，显示手动链接
+                document.getElementById('manual-link').innerHTML = `<br><a href="${decodedUri}">如果没有自动跳转，请点击这里</a>`;
+              
+            } else {
+                statusText.innerText = "错误：链接中没有包含目标 URI。";
+            }
+        };
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h3 id="status">准备跳转...</h3>
+        <div id="manual-link"></div>
+    </div>
+</body>
+</html>
+
