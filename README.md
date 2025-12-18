@@ -6,7 +6,7 @@
 
 当你点击类似这样的链接时：
 ```
-https://rustinmiracle.github.io/redirect/?app=omnifocus&uri=omnifocus%3A%2F%2F%2Ftask%2Fi5uauc17Jd4
+https://rustintm-ai.github.io/redirect/?app=omnifocus&uri=omnifocus%3A%2F%2F%2Ftask%2Fi5uauc17Jd4
 ```
 
 页面会自动提取 `uri` 参数，解码后跳转到对应的 App URL Scheme。
@@ -15,10 +15,10 @@ https://rustinmiracle.github.io/redirect/?app=omnifocus&uri=omnifocus%3A%2F%2F%2
 
 ### 1. 文件结构
 
-将 `redirect/` 文件夹及其内容推送到你的 GitHub Pages 仓库（`rustinmiracle.github.io`）的根目录：
+将 `redirect/` 文件夹及其内容推送到你的 GitHub Pages 仓库（`rustintm-ai.github.io`）的根目录：
 
 ```
-rustinmiracle.github.io/
+rustintm-ai.github.io/
 └── redirect/
     └── index.html
 ```
@@ -56,7 +56,7 @@ GitHub Pages 通常会在几分钟内更新。部署完成后，你的链接就�
 
 3. 最终重定向链接：
    ```
-   https://rustinmiracle.github.io/redirect/?app=omnifocus&uri=omnifocus%3A%2F%2F%2Ftask%2Fi5uauc17Jd4
+   https://rustintm-ai.github.io/redirect/?app=omnifocus&uri=omnifocus%3A%2F%2F%2Ftask%2Fi5uauc17Jd4
    ```
 
 **示例：Obsidian 笔记链接**
@@ -73,7 +73,7 @@ GitHub Pages 通常会在几分钟内更新。部署完成后，你的链接就�
 
 3. 最终重定向链接：
    ```
-   https://rustinmiracle.github.io/redirect/?app=Obsidian&uri=obsidian%3A%2F%2Fopen%3Fvault%3DRustWise%26file%3DNote.md
+   https://rustintm-ai.github.io/redirect/?app=Obsidian&uri=obsidian%3A%2F%2Fopen%3Fvault%3DRustWise%26file%3DNote.md
    ```
 
 **示例：Obsidian Advanced URI（推荐）**
@@ -90,7 +90,7 @@ GitHub Pages 通常会在几分钟内更新。部署完成后，你的链接就�
 
 3. 最终重定向链接：
    ```
-   https://rustinmiracle.github.io/redirect/?app=Obsidian&uri=obsidian%3A%2F%2Fadvanced-uri%3Fvault%3DRustWise%26filepath%3DProjects%2FMyProject.md%26uid%3Dabc123
+   https://rustintm-ai.github.io/redirect/?app=Obsidian&uri=obsidian%3A%2F%2Fadvanced-uri%3Fvault%3DRustWise%26filepath%3DProjects%2FMyProject.md%26uid%3Dabc123
    ```
 
 ### 使用 JavaScript 生成链接
@@ -98,16 +98,16 @@ GitHub Pages 通常会在几分钟内更新。部署完成后，你的链接就�
 ```javascript
 function createRedirectLink(appName, urlScheme) {
     const encodedUri = encodeURIComponent(urlScheme);
-    return `https://rustinmiracle.github.io/redirect/?app=${appName}&uri=${encodedUri}`;
+    return `https://rustintm-ai.github.io/redirect/?app=${appName}&uri=${encodedUri}`;
 }
 
 // 示例：OmniFocus
 const omnifocusLink = createRedirectLink('omnifocus', 'omnifocus:///task/i5uauc17Jd4');
-// 结果: https://rustinmiracle.github.io/redirect/?app=omnifocus&uri=omnifocus%3A%2F%2F%2Ftask%2Fi5uauc17Jd4
+// 结果: https://rustintm-ai.github.io/redirect/?app=omnifocus&uri=omnifocus%3A%2F%2F%2Ftask%2Fi5uauc17Jd4
 
 // 示例：Obsidian
 const obsidianLink = createRedirectLink('Obsidian', 'obsidian://advanced-uri?vault=RustWise&filepath=Projects/MyProject.md&uid=abc123');
-// 结果: https://rustinmiracle.github.io/redirect/?app=Obsidian&uri=obsidian%3A%2F%2Fadvanced-uri%3Fvault%3DRustWise%26filepath%3DProjects%2FMyProject.md%26uid%3Dabc123
+// 结果: https://rustintm-ai.github.io/redirect/?app=Obsidian&uri=obsidian%3A%2F%2Fadvanced-uri%3Fvault%3DRustWise%26filepath%3DProjects%2FMyProject.md%26uid%3Dabc123
 ```
 
 ### 使用 iOS/macOS 快捷指令 (Shortcuts)
@@ -117,7 +117,7 @@ const obsidianLink = createRedirectLink('Obsidian', 'obsidian://advanced-uri?vau
 1. **输入**：接受文本或 URL（作为输入）
 2. **URL 编码**：对输入进行 `URL 编码` (URL Encode)
 3. **组合文本**：
-   - 文本内容：`https://rustinmiracle.github.io/redirect/?app=App&uri=`
+   - 文本内容：`https://rustintm-ai.github.io/redirect/?app=App&uri=`
    - 后面接上：`[编码后的 URL]`
 4. **复制到剪贴板**
 

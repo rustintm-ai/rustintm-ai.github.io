@@ -38,9 +38,9 @@ git push -u origin master
 
 ```bash
 cd /Users/one/MySpace/50_Development/lifeDNA/projects/github-pages-redirect
-git remote set-url origin https://github.com/rustinmiracle/rustinmiracle.github.io.git
+git remote set-url origin https://github.com/rustintm-ai/rustintm-ai.github.io.git
 git push -u origin master
-# 用户名：你的 GitHub 用户名
+# 用户名：rustintm-ai
 # 密码：粘贴个人访问令牌（在 GitHub Settings → Developer settings → Personal access tokens 创建）
 ```
 
@@ -67,12 +67,12 @@ git push -u origin master
 
 ### 测试 OmniFocus 链接
 ```
-https://rustinmiracle.github.io/redirect/?app=omnifocus&uri=omnifocus%3A%2F%2F%2Ftask%2Fi5uauc17Jd4
+https://rustintm-ai.github.io/redirect/?app=omnifocus&uri=omnifocus%3A%2F%2F%2Ftask%2Fi5uauc17Jd4
 ```
 
 ### 测试 Obsidian 链接
 ```
-https://rustinmiracle.github.io/redirect/?app=Obsidian&uri=obsidian%3A%2F%2Fadvanced-uri%3Fvault%3DRustWise%26filepath%3DProjects%2FMyProject.md%26uid%3Dabc123
+https://rustintm-ai.github.io/redirect/?app=Obsidian&uri=obsidian%3A%2F%2Fadvanced-uri%3Fvault%3DRustWise%26filepath%3DProjects%2FMyProject.md%26uid%3Dabc123
 ```
 
 ## 你的 SSH 公钥
