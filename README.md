@@ -61,19 +61,36 @@ GitHub Pages 通常会在几分钟内更新。部署完成后，你的链接就�
 
 **示例：Obsidian 笔记链接**
 
-1. 原始 URL Scheme：
+1. 原始 URL Scheme（打开文件）：
    ```
-   obsidian://open?vault=MyVault&file=Note
+   obsidian://open?vault=RustWise&file=Note.md
    ```
 
 2. URL 编码后：
    ```
-   obsidian%3A%2F%2Fopen%3Fvault%3DMyVault%26file%3DNote
+   obsidian%3A%2F%2Fopen%3Fvault%3DRustWise%26file%3DNote.md
    ```
 
 3. 最终重定向链接：
    ```
-   https://rustinmiracle.github.io/redirect/?app=Obsidian&uri=obsidian%3A%2F%2Fopen%3Fvault%3DMyVault%26file%3DNote
+   https://rustinmiracle.github.io/redirect/?app=Obsidian&uri=obsidian%3A%2F%2Fopen%3Fvault%3DRustWise%26file%3DNote.md
+   ```
+
+**示例：Obsidian Advanced URI（推荐）**
+
+1. 原始 URL Scheme（使用 advanced-uri）：
+   ```
+   obsidian://advanced-uri?vault=RustWise&filepath=Projects/MyProject.md&uid=abc123
+   ```
+
+2. URL 编码后：
+   ```
+   obsidian%3A%2F%2Fadvanced-uri%3Fvault%3DRustWise%26filepath%3DProjects%2FMyProject.md%26uid%3Dabc123
+   ```
+
+3. 最终重定向链接：
+   ```
+   https://rustinmiracle.github.io/redirect/?app=Obsidian&uri=obsidian%3A%2F%2Fadvanced-uri%3Fvault%3DRustWise%26filepath%3DProjects%2FMyProject.md%26uid%3Dabc123
    ```
 
 ### 使用 JavaScript 生成链接
@@ -84,9 +101,13 @@ function createRedirectLink(appName, urlScheme) {
     return `https://rustinmiracle.github.io/redirect/?app=${appName}&uri=${encodedUri}`;
 }
 
-// 示例
+// 示例：OmniFocus
 const omnifocusLink = createRedirectLink('omnifocus', 'omnifocus:///task/i5uauc17Jd4');
 // 结果: https://rustinmiracle.github.io/redirect/?app=omnifocus&uri=omnifocus%3A%2F%2F%2Ftask%2Fi5uauc17Jd4
+
+// 示例：Obsidian
+const obsidianLink = createRedirectLink('Obsidian', 'obsidian://advanced-uri?vault=RustWise&filepath=Projects/MyProject.md&uid=abc123');
+// 结果: https://rustinmiracle.github.io/redirect/?app=Obsidian&uri=obsidian%3A%2F%2Fadvanced-uri%3Fvault%3DRustWise%26filepath%3DProjects%2FMyProject.md%26uid%3Dabc123
 ```
 
 ### 使用 iOS/macOS 快捷指令 (Shortcuts)
